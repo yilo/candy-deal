@@ -1,0 +1,14 @@
+{
+	"name":"candy-deal",
+	"version":"0.1.0",
+	"description":"website",
+	"author":"successforevertim@gmail.com",
+	"dependencies" :{
+		"express":"latest",
+		"body-parser":"latest",
+		"express-handlebars":"latest"
+	},
+	"devDependencies":{
+		"bower":"latest"
+	}
+}

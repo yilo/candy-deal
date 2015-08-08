@@ -1,6 +1,4 @@
-nav.top-bar.header-bar {
-	background-color:#fff;
-}
+
 
 
 
@@ -73,8 +71,8 @@ div.row.slider {
 	margin-left:1px;
 	width:100%;
 	max-width:10000px;
-	height:485px;
-	background:#e6e9ec url("/imgs/slide-1.jpg") no-repeat center;
+	height:300px;
+	background:#e6e9ec url("/imgs/center-bg.jpg") no-repeat center;
 	    background-size: cover;
 }
 

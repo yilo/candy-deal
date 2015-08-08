@@ -6,7 +6,8 @@
 	"dependencies" :{
 		"express":"latest",
 		"body-parser":"latest",
-		"express-handlebars":"latest"
+		"express-handlebars":"latest",
+		"elasticsearch":"latest"
 	},
 	"devDependencies":{
 		"bower":"latest"

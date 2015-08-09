@@ -10,14 +10,24 @@ clean = require('gulp-clean'),
 concat = require('gulp-concat'),
 notify = require('gulp-notify'),
 cache = require('gulp-cache'),
+copy = require('gulp-copy'),
 livereload = require('gulp-livereload');
 
-gulp.task("compile-foundation", function () {
-	return gulp.src('bower_components/foundation/scss/*.scss')
+gulp.task("compile-sass", function () {
+	return gulp.src(['bower_components/foundation/scss/*.scss','public/scss/*.scss'])
 	.pipe(sass({
-			includePaths : ['bower_components/foundation/scss']
+			style:"nested"			
 		}))
+	.pipe(autoprefixer({browsers: ['last 2 versions']}))	
 	.pipe(gulp.dest('./public/css'));
 });
 
-gulp.task('default', ['compile-foundation']);
+gulp.task("copy-thirdparty-js", function(){
+	return gulp.src(["./bower_components/handlebars/handlebars.min.js"]).pipe(copy('./public/js/vendors/',{"prefix":3}));
+});
+
+gulp.task("watch", function(){
+	gulp.watch("./**/*.scss", ["compile-sass"]);
+});
+
+gulp.task('default', ['compile-sass','copy-thirdparty-js']);

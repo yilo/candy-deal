@@ -1,151 +1,127 @@
 
-<div>
-<nav class="top-bar header-bar" data-topbar role="navigation">
-  <ul class="title-area">
-    <li class="name">
-      <h1><a href="#">WELCOME</a></h1>
-    </li>
-     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
+<div class="top-header">
 
-  <section class="top-bar-section">
-    <!-- Right Nav Section -->
-    <ul class="right">
-      <li class="active"><a href="#">Right Button Active</a></li>
-      <li class="has-dropdown">
-        <a href="#">Right Button Dropdown</a>
-        <ul class="dropdown">
-          <li><a href="#">First link in dropdown</a></li>
-          <li class="active"><a href="#">Active link in dropdown</a></li>
-        </ul>
-      </li>
-    </ul>
+	<nav class="top-bar header-bar" data-topbar role="navigation">
+		<ul class="title-area">
+			<li class="name">
+				<h1><a href="#">WELCOME</a></h1>
+			</li>
+			<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+			<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+		</ul>
 
-    <!-- Left Nav Section -->
-    <ul class="left">
-      <li><a href="#">Left Nav Button</a></li>
-    </ul>
-  </section>
-</nav>
+		<section class="top-bar-section">
+			<!-- Right Nav Section -->
+			<ul class="right">
+				<li class="active"><a href="#">Right Button Active</a></li>
+				<li class="has-dropdown">
+					<a href="#">Right Button Dropdown</a>
+					<ul class="dropdown">
+						<li><a href="#">First link in dropdown</a></li>
+						<li class="active"><a href="#">Active link in dropdown</a></li>
+					</ul>
+				</li>
+			</ul>
+
+			<!-- Left Nav Section -->
+			<ul class="left">
+				<li><a href="#">Left Nav Button</a></li>
+			</ul>
+		</section>
+
+	</nav>
+
 </div>
 
-<div class="row header margin-top-20">
+<div class="row banner-header">
+
 	<div class="medium-6 large-6 columns">
 		<div class="row margin-top-20">
 			<div class="medium-6 columns">
 				<div class="icon-bar">
 					<a class="item">
-						<i class="fi-heart style3"></i>
+						<i class="fi-heart heart-shadow-style"></i>
 					</a>
 					<cite>Candy </cite>
-					<span class="light">Deals</span>
+					<span class="font-light">Deals</span>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="medium-6 large-6 columns">
 		<div class="row margin-top-20">
-			
-				<ul class="inline-list top-10">
-					<li><a href="#">login</a></li>
-					<li><a href="#">sign up</a></li>
-					<li class="pad"><a href="#" class="button expand style2 small-font"><i class="fi-like"></i><span>Like US</span></a></li>
-				</ul>
-			
+
+			<ul class="inline-list top-10">
+				<li><a href="#">login</a></li>
+				<li><a href="#">sign up</a></li>
+				<li class="pad"><a href="#" class="button expand shadow-style small-font"><i class="fi-like"></i><span>Like US</span></a></li>
+			</ul>
+
 		</div>			
 	</div>
+
 </div>
 
-<div class="row slider">
+<div class="row center-bg">
+
 	<div class="medium-10 search-title">
-		<h1 class="subheader">Best Deals In The City</h1>
+		<h1 class="subheader">Best Deals Engine In Singapore</h1>
 		<h4 class="subheader">Life worth to be candy , Let's explore what are the best deals in the city</h4>
 	</div>
+
+
+
 	<div class="row search-bar">
-			<div class="large-6 columns">
-				<div class="row collapse prefix-round">
-					<div class="small-3 columns">
-						<a href="#" class="button prefix"><i class="fi-magnifying-glass"></i> SEARCH</a>
+		<div class="large-6 columns">
+			<div class="row collapse prefix-round">
+				<div class="small-1 columns"><a href="" class="button prefix"><i class="fi-magnifying-glass"></i></a></div>
+				<div class="small-2 columns search">
+					<select id="searchCategorySelect">
+						<option value="f">FOOD</option>
+						<option value="s">SHOPPING</option>
+						<option value="c">CREDIT CARD</option>
+					</select>
+				</div>
+				<div class="small-7 columns">
+					<input id="searchTxt" type="text" placeholder="I am looking for">
 					</div>
-					<div class="small-9 columns">
-						<input type="text" placeholder="I am looking for">
+					<div class="small-2 columns"><a id="goBtn" href="#" class="button success postfix">GO</a></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="row search-result-pane" id="searchResultPane">
+
+	</div>
+
+	<script id="search-item-source" type="text/x-handlebars-template">
+
+		<ul class="small-block-grid-1 medium-block-grid-1 large-block-grid-1">
+			\{{#each items}}
+			<li>
+				<div class="row">
+					<div class="medium-4 columns"><a href="\{{dealLink}}"> <img src="\{{largeImage}}" alt="" /></a> <span class="highlight">DEAL</span></div>
+
+					<div class="medium-8 columns item-panel panel callout"> 
+						<div class="title">\{{title}}</div>
+						<div class="price">$\{{price}}</div>
+						<div class="validate-time">Valid till \{{endAt}}.</div>
+						<div class="desc">\{{finePrint}}</div>
+						<div>
+								<div class="button-group" data-grouptype="OR">
+									<a href="\{{buyLink}}" class="small button primary radius">Buy it now</a>
+									<a href="\{{dealLink}}" class="small button success radius">Learn More</a>
+								</div>
+							</div>
+						
 					</div>
 				</div>
 			</div>
-    
-	</div>
-</div>
+		</li>
+		\{{/each}}
+	</ul>
 
-<div class="row ad-block">
-      
-      <div class="medium-6 medium-push-6 columns">
-        <img src="http://static.sg.groupon-content.net/76/75/1437550117576.jpg" alt="" />
-      </div>
-      
-      <div class="medium-6 medium-pull-6 columns">
-        
-        <ul class="pricing-table">
-  <li class="title">A-One Claypot House: $28.80 for $50 Cash Voucher for Chinese Cuisine and Drinks at 8 Outlets. More Options Available</li>
-  <li class="price">$99.99</li>
-  <li class="description">Valid till Sep 18, 2015.</li>
-  <li class="bullet-item">Limit 1 Groupon per table per bill, no splitting of tables/bills allowed</li>
-  <li class="bullet-item">Valid for dine-in only.</li>
-  <li class="bullet-item">Valid for à la carte menu only.</li>
-</ul>
-        <div class="button-group" data-grouptype="OR">
-  <button href="#" class="small button primary radius">Buy it now</button>
-  <button href="#" class="small button success radius">Learn More</button>
-</div>
-      </div>
-      
-    </div>
-
-<div class="row ad-block">
-      
-      <div class="medium-6 medium-push-6 columns">
-        <img src="http://static.sg.groupon-content.net/76/75/1437550117576.jpg" alt="" />
-      </div>
-      
-      <div class="medium-6 medium-pull-6 columns">
-        
-        <ul class="pricing-table">
-  <li class="title">A-One Claypot House: $28.80 for $50 Cash Voucher for Chinese Cuisine and Drinks at 8 Outlets. More Options Available</li>
-  <li class="price">$99.99</li>
-  <li class="description">Valid till Sep 18, 2015.</li>
-  <li class="bullet-item">Limit 1 Groupon per table per bill, no splitting of tables/bills allowed</li>
-  <li class="bullet-item">Valid for dine-in only.</li>
-  <li class="bullet-item">Valid for à la carte menu only.</li>
-</ul>
-        <div class="button-group" data-grouptype="OR">
-  <button href="#" class="small button primary radius">Buy it now</button>
-  <button href="#" class="small button success radius">Learn More</button>
-</div>
-      </div>
-      
-    </div>
-
-<div class="row ad-block">
-      
-      <div class="medium-6 medium-push-6 columns">
-        <img src="http://static.sg.groupon-content.net/76/75/1437550117576.jpg" alt="" />
-      </div>
-      
-      <div class="medium-6 medium-pull-6 columns">
-        
-        <ul class="pricing-table">
-  <li class="title">A-One Claypot House: $28.80 for $50 Cash Voucher for Chinese Cuisine and Drinks at 8 Outlets. More Options Available</li>
-  <li class="price">$99.99</li>
-  <li class="description">Valid till Sep 18, 2015.</li>
-  <li class="bullet-item">Limit 1 Groupon per table per bill, no splitting of tables/bills allowed</li>
-  <li class="bullet-item">Valid for dine-in only.</li>
-  <li class="bullet-item">Valid for à la carte menu only.</li>
-</ul>
-        <div class="button-group" data-grouptype="OR">
-  <button href="#" class="small button primary radius">Buy it now</button>
-  <button href="#" class="small button success radius">Learn More</button>
-</div>
-      </div>
-      
-    </div>
-
+</script>

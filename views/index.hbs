@@ -54,17 +54,17 @@
             <h4 class="subheader">Life worth to be candy , Let's explore what are the best deals in the city</h4>
          </div>
          <div class="row search-bar">
-            <div class="medium-6 medium-offset-3 columns">
+            <div class="small-12 small-offset-1 medium-6 medium-offset-4 columns">
                <div class="row collapse prefix-round">
                   <div class="small-1 columns"><a href="" class="button prefix"><i class="fi-magnifying-glass"></i></a></div>
                   <div class="small-2 columns search">
                      <select id="searchCategorySelect" ng-options="category.code as category.name for category in categoryFilters" 
                         ng-model="selectedCategoryFilterCode" ></select>
                   </div>
-                  <div class="small-7 columns">
+                  <div class="small-4 columns">
                      <input id="searchTxt" type="text" placeholder="I am looking for">
                   </div>
-                  <div class="small-2 columns"><a id="goBtn" ng-click="searchDeal()" href="#" class="button success postfix">GO</a></div>
+                  <div class="small-2 columns go"><a id="goBtn" ng-click="searchDeal()" href="#" class="button success postfix">GO</a></div>
                </div>
             </div>
          </div>
@@ -72,13 +72,13 @@
       <div class="row search-result-pane animate-if" id="searchResultPane" ng-if="currentItem">
          <div class="row search-result-pane-header">
             <div class="medium-4 columns search-result-pane-header-title"><span class="round label">Today's hottest</span></div>
-            <div class="medium-4 columns search-result-pane-header-nav"><a ng-click="prev()"><i class="fi-arrow-left"></i></a>
-               <a ng-click="next()"><i class="fi-arrow-right"></i></a>
+            <div class="medium-4 columns search-result-pane-header-nav"><a ng-click="prev()" ng-if="itemIndex > 0"><i class="fi-arrow-left"></i></a>
+               <a ng-click="next()" ng-if="itemIndex < searchResults.length - 1"><i class="fi-arrow-right"></i></a>
             </div>
          </div>
          <div class="row search-result-pane-box" ng-model="currentItem">
-            <div class="medium-4 columns"><a ng-href="{[currentItem.dealLink]}"> <img ng-src="{[currentItem.largeImage]}" alt="" /></a> <span class="highlight">DEAL</span></div>
-            <div class="medium-8 columns item-panel panel callout">
+            <div class="small-12 medium-4 columns"><a ng-href="{[currentItem.dealLink]}"> <img ng-src="{[currentItem.largeImage]}" alt="" /></a> <span class="highlight">DEAL</span></div>
+            <div class="small-12 medium-8 columns item-panel panel callout">
                <div class="title" ng-bind="currentItem.title"></div>
                <div class="price" ng-bind="(currentItem.price | currency )"></div>
                <div class="validate-time" ng-bind=" 'Expire at : ' + (currentItem.endAt | date: 'yyyy-MMMM-dd' )"> </div>

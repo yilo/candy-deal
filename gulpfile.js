@@ -27,7 +27,9 @@ gulp.task("compile-sass", function () {
 gulp.task("copy-thirdparty-js", function () {
 	return gulp.src(["./bower_components/handlebars/handlebars.min.js", 
 					 "./bower_components/angular/angular.min.js",
-					 "./bower_components/angular-route/angular-route.min.js"]).pipe(copy('./public/js/vendors/', {
+					 "./bower_components/angular-route/angular-route.min.js",
+					 "./bower_components/angular-animate/angular-animate.min.js"
+					 ]).pipe(copy('./public/js/vendors/', {
 			"prefix" : 3
 		}));
 });

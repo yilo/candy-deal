@@ -1,16 +1,21 @@
 div.banner-header {
-  max-height: 82px;
-  margin: 5px 0px 5px 22%; }
-  div.banner-header i.heart-shadow-style {
-    font-size: 35px;
-    color: #E33100;
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #E33100, 0 0 30px #E33100, 0 0 40px #E33100, 0 0 50px #E33100, 0 0 75px #E33100; }
-  div.banner-header span.font-light {
-    font-weight: lighter;
-    font-size: 35px; }
-  div.banner-header a.shadow-style {
-    font-size: 50px;
-    text-shadow: 0px 1px 0px #0092b3, 0px 2px 0px #0087a6, 0px 3px 0px #008099, 0px 4px 0px #00758c, 0px 5px 0px #555, 0px 6px 0px #006a80, 0px 0px 0px #006073, 0px 8px 7px #005566; }
+  max-height: 82px; }
+  div.banner-header div.icon-bar {
+    padding: 3px 3px 3px 3px;
+    width: 50%; }
+    div.banner-header div.icon-bar a {
+      padding: 3px 3px 3px 3px; }
+      div.banner-header div.icon-bar a i.heart-shadow-style {
+        padding: 3px 3px 3px 3px;
+        font-size: 35px;
+        color: #E33100;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #E33100, 0 0 30px #E33100, 0 0 40px #E33100, 0 0 50px #E33100, 0 0 75px #E33100; }
+    div.banner-header div.icon-bar cite {
+      padding: 3px 3px 3px 3px; }
+    div.banner-header div.icon-bar span.font-light {
+      padding: 15px 3px 3px 15px;
+      font-weight: lighter;
+      font-size: 35px; }
   div.banner-header ul.inline-list {
     margin: 30px 0px 0px 0px; }
     div.banner-header ul.inline-list > li {
@@ -26,42 +31,16 @@ div.banner-header {
     div.banner-header a.small-font i, div.banner-header a.small-font span {
       padding: 10px; }
 
+div.client-controller.row {
+  max-width: 100%; }
+
 div.center-bg {
   margin-top: 10px 1px 0px 1px;
   width: 100%;
   max-width: 10000px;
   height: 200px;
   background: #e6e9ec url("/imgs/center-bg.jpg") no-repeat center;
-  background-size: cover;
-  /*div.search-tab{
-		@include center-margin;
-	}
-	//center search tab
-	div.search-tab {
-		ul.tabs {
-			height:40px;
-			padding: 0 0 0 0;
-			overflow:visible;
-			li.tab-title {
-				width:120px;
-				height:30px;
-				overflow:hidden;
-				float:left;
-				margin:0 -15px 0 0;
-				display: inline-block; 
-				vertical-align: top;
-				font-size:15px;
-				> a {
-					padding: 5px;
-				}
-			}
-		}
-		div.tabs-content {
-			div.content {
-				padding : 1px;
-			}
-		}
-	}*/ }
+  background-size: cover; }
   div.center-bg > div.search-title {
     margin: 0px 0px 0px 20px; }
     div.center-bg > div.search-title > h1 {
@@ -72,11 +51,8 @@ div.center-bg {
     div.center-bg > div.search-title > h4 {
       margin: 5px 5px 5px 25%;
       color: #fff;
-      font-family: Montserrat, sans-serif; }
-  div.center-bg div.search-bar > div.large-6 {
-    margin: 5px 5px 5px 25%;
-    color: #fff;
-    font-family: Montserrat, sans-serif; }
+      font-family: Montserrat, sans-serif;
+      font-style: italic; }
   div.center-bg .search h2 {
     text-align: center; }
   div.center-bg .search form.custom .custom.dropdown {
@@ -92,7 +68,9 @@ div.center-bg {
     margin-top: 25px; }
 
 div.search-result-pane {
-  margin: 10px auto; }
+  margin: 10px auto !important;
+  width: 80% !important;
+  background-color: aliceblue; }
   div.search-result-pane div.search-result-pane-header {
     margin: 10px 0px 15px 15%; }
     div.search-result-pane div.search-result-pane-header span {
@@ -106,6 +84,16 @@ div.search-result-pane {
     color: #fff; }
   div.search-result-pane div.search-result-pane-box {
     max-height: 200px; }
+    div.search-result-pane div.search-result-pane-box img {
+      max-height: 200px;
+      min-height: 200px;
+      height: 200px;
+      border-style: outset;
+      border: 4px solid burlywood; }
+    div.search-result-pane div.search-result-pane-box div.panel.callout {
+      max-height: 200px;
+      min-height: 200px;
+      height: 200px; }
 
 span.highlight {
   position: absolute;
@@ -149,7 +137,7 @@ div.footer {
   background: #fff;
   color: #fff;
   font-size: 25px;
-  margin: 20px auto; }
+  margin: 30px auto; }
   div.footer div.panel.callout {
     border-style: solid;
     border-color: #fff;
@@ -172,3 +160,19 @@ div.footer {
       color: #fff; }
     div.footer div.panel.callout p {
       font-style: italic; }
+
+.animate-if {
+  background: white;
+  border: 1px solid black;
+  padding: 10px; }
+
+.animate-if.ng-enter, .animate-if.ng-leave {
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s; }
+
+.animate-if.ng-enter,
+.animate-if.ng-leave.ng-leave-active {
+  opacity: 0; }
+
+.animate-if.ng-leave,
+.animate-if.ng-enter.ng-enter-active {
+  opacity: 1; }

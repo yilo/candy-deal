@@ -58,9 +58,7 @@ div.banner-header{
 
 //center background
 div.center-bg {
-	margin-top:10px;
-	margin-right:1px;
-	margin-left:1px;
+	margin-top:10px 1px 0px 1px;
 	width:100%;
 	max-width:10000px;
 	height:200px;
@@ -139,6 +137,25 @@ div.center-bg {
 //search result pane
 div.search-result-pane {
 	margin: 10px auto;
+	div.search-result-pane-header {
+		margin: 10px 0px 15px 15%;
+		span {
+			font-size:20px;
+		}
+	}
+	div.search-result-pane-header-nav{
+		a {
+			margin: 15px;
+			padding:10px;
+			background-color: #a44688;
+			border-radius: 50%;
+			width: 30px;
+			color:#fff;
+		}
+	}
+	div.search-result-pane-box{
+		max-height:200px;
+	}
 }
 
 span.highlight {
@@ -181,5 +198,39 @@ div.item-panel {
 		padding:5px;
 		max-height:30px;
 		margin:0px;
+	}
+}
+
+
+div.footer{
+	background: #fff;
+	color:#fff;
+	font-size:25px;
+	margin:20px auto;
+	div.panel.callout{
+		border-style: solid;
+		border-color: #fff;
+		max-height:90px;
+		min-height:90px;
+		background-color: #3abec0;;
+		padding:5px;
+		color:#fff;
+		i{			
+			font-size: 36px;
+			float: left;
+			margin: 0px 10px 10px 1px;
+		}
+		h3 {
+			font-family: "Montserrat", sans-serif;
+			font-weight: bold;
+			margin: 0px;
+			line-height: 20px;
+			text-transform: uppercase;
+			font-size: 15px;
+			color:#fff;
+		}
+		p {
+			font-style: italic;
+		}
 	}
 }

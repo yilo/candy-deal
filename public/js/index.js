@@ -1,4 +1,8 @@
-/* index hbs*/
+
+
+
+
+/* index hbs
 
 $(function(){
 	
@@ -21,3 +25,4 @@ $(function(){
 		});
 	});
 });
+*/

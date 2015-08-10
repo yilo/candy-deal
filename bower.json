@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "dependencies": {
     "foundation": "~5.5.2",
-	"handlebars": "latest"
+	"handlebars": "latest",
+	"angular": "latest",
+	"angular-route": "latest"
   },
   "private": true
 }

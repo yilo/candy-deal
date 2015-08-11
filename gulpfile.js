@@ -28,14 +28,19 @@ gulp.task("copy-thirdparty-js", function () {
 	return gulp.src(["./bower_components/handlebars/handlebars.min.js", 
 					 "./bower_components/angular/angular.min.js",
 					 "./bower_components/angular-route/angular-route.min.js",
-					 "./bower_components/angular-animate/angular-animate.min.js"
+					 "./bower_components/angular-animate/angular-animate.min.js",
+					 "./bower_components/underscore/underscore-min.js"
 					 ]).pipe(copy('./public/js/vendors/', {
 			"prefix" : 3
 		}));
 });
 
 gulp.task("concat-angular", function(){
-	return gulp.src(["angular-modules/angular-init.js","angular-modules/controllers/*.js"]).pipe(concat("mvc.js")).pipe(gulp.dest("./public/js/"));
+	return gulp.src([
+					"angular-modules/underscore-module.js",
+					"angular-modules/angular-init.js",
+					"angular-modules/factories/*.js",
+					"angular-modules/controllers/*.js"]).pipe(concat("mvc.js")).pipe(gulp.dest("./public/js/"));
 });
 
 gulp.task("watch", function () {

@@ -7,7 +7,9 @@
     "express": "latest",
     "body-parser": "latest",
     "express-handlebars": "latest",
-    "elasticsearch": "latest"
+    "elasticsearch": "latest",
+	"underscore":"1.8.3",
+	"request":"latest"
   },
   "devDependencies": {
     "bower": "latest",

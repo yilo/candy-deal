@@ -4,10 +4,10 @@ var app = angular.module('dealApp');
 
 app.factory('groupOnClientService', ['_',function(_){
 	
-	var groupOnDealUrl = "https://partner-int-api.groupon.com/deals.json?";
+	var groupOnDealUrl = "https://partner-int-api.groupon.com/deals.json?callback=JSON_CALLBACK";
 	var clientId = "bd289feb84b6c5960a7abc2528bd25ea396cd530";//Reporting API key
 	
-	var conditions = ["tsToken=SG_AFF_0_205944_212528_0","country_code=SG"];
+	var conditions = ["tsToken=SG_AFF_0_205944_212528_0","country_code=SG","offset=0","limit=10"];
 	var client = {};	
 	client.getDealsByPostCode = function(postCode){
 		return 'postal_code=' + postCode;
@@ -21,7 +21,7 @@ app.factory('groupOnClientService', ['_',function(_){
 	};
 	
 	client.resetCondition = function(){
-		conditions = ["tsToken=SG_AFF_0_205944_212528_0","country_code=SG"];
+		conditions = ["tsToken=SG_AFF_0_205944_212528_0","country_code=SG","offset=0","limit=10"];
 	}
 	
 	client.build = function(){

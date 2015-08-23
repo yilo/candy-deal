@@ -24,3 +24,9 @@ var groupOnCategoryList = [{
 					"name" : "TRAVEL",
 					"groupOnCategory":"travel"
 				}];
+angular.module('dealApp')
+    .filter('to_trusted', ['$sce', function($sce){
+        return function(text) {
+            return $sce.trustAsHtml(text);
+        };
+    }]);

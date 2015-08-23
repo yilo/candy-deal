@@ -1,15 +1,35 @@
 /**/
 var app = angular.module('dealApp');
 
-app.controller('dealSearchCtrl', ['$scope', '$http', 'groupOnClientService', function ($scope, $http, groupOnClientService) {
+app.controller('dealSearchCtrl', ['$scope', '$http', 'groupOnClientService', '_', '$sce', function ($scope, $http, groupOnClientService, _,$sce) {
 			$scope.searchResults = [];
 			$scope.itemIndex = 0;
 
 			$scope.searchDeal = function () {
 				var filterCode = $scope.selectedCategoryFilterCode;
-				var link = groupOnClientService.getDealsByCategoryCode(filterCode).build();
-				
-				$http.post('api/search').then(function (resp) {
+
+				/*var link = groupOnClientService.getDealsByCategoryCode(filterCode).build();
+
+				$http.jsonp(link,{"responseType":"json"}).then(function (resp) {
+				var deals = resp.data.deals;
+				_.each(deals, function (deal) {
+				$scope.searchResults.push({
+				"id" : deal.id,
+				"title" : deal.title,
+				"dealUrl" : deal.dealUrl,
+				"finePrint" : deal.finePrint,
+				"largeImageUrl": deal.largeImageUrl,
+				"endAt":deal.endAt
+				});
+				});
+				$scope.searchResults = resp.data.items;
+				$scope.currentItem = $scope.searchResults[$scope.itemIndex];
+				});*/
+
+				$http.post('api/search', {
+					filterCode : filterCode
+				}).then(function (resp) {
+					
 					$scope.searchResults = resp.data.items;
 					$scope.currentItem = $scope.searchResults[$scope.itemIndex];
 				});

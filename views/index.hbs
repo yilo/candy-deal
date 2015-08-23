@@ -77,16 +77,16 @@
             </div>
          </div>
          <div class="row search-result-pane-box" ng-model="currentItem">
-            <div class="small-12 medium-4 columns"><a ng-href="{[currentItem.dealLink]}"> <img ng-src="{[currentItem.largeImage]}" alt="" /></a> <span class="highlight">DEAL</span></div>
+            <div class="small-12 medium-4 columns"><a ng-href="{[currentItem.dealUrl]}"> <img ng-src="{[currentItem.largeImageUrl]}" alt="" /></a> <span class="highlight">DEAL</span></div>
             <div class="small-12 medium-8 columns item-panel panel callout">
                <div class="title" ng-bind="currentItem.title"></div>
-               <div class="price" ng-bind="(currentItem.price | currency )"></div>
+               <!--<div class="price" ng-bind="(currentItem.price | currency )"></div>-->
                <div class="validate-time" ng-bind=" 'Expire at : ' + (currentItem.endAt | date: 'yyyy-MMMM-dd' )"> </div>
-               <div class="desc" ng-bind="currentItem.finePrint"></div>
+               <div class="desc" ng-bind-html="currentItem.finePrint | to_trusted"></div>
                <div>
                   <div class="button-group" data-grouptype="OR">
-                     <a ng-href="{[currentItem.buyLink]}" class="small button primary radius">Buy it now</a>
-                     <a ng-href="{[currentItem.dealLink]}" class="small button success radius">Learn More</a>
+                     <!--<a ng-href="{[currentItem.buyLink]}" class="small button primary radius">Buy it now</a>-->
+                     <a ng-href="{[currentItem.dealUrl]}" class="small button success radius">Learn More</a>
                   </div>
                </div>
             </div>
